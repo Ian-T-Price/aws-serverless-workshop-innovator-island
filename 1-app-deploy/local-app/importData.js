@@ -9,10 +9,10 @@ AWS.config.update({ region: process.argv[2] })
 const docClient = new AWS.DynamoDB.DocumentClient()
 const CSV_FILENAME = './table.csv'
 
-/* 
+/*
   USAGE:
   ------
-   Run from the command line with two parameters:
+  Run from the command line with two parameters:
   - Region (eg. us-east-1)
   - DynamoDB table (e.g. theme-park-backend-DynamoDBTable-ABCDE1234XYZ)
 
@@ -38,11 +38,11 @@ const uploadFileToDynamoDB = (err, data) => {
       RequestItems: {}
     }
     params.RequestItems[ddb_table] = []
- 
+
     item_data.forEach(item => {
       for (let key of Object.keys(item)) {
         // An AttributeValue may not contain an empty string
-        if (item[key] === '') 
+        if (item[key] === '')
           delete item[key]
       }
 

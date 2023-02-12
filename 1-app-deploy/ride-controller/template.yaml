@@ -21,8 +21,8 @@ Resources:
       BillingMode: PROVISIONED
       ProvisionedThroughput:
         ReadCapacityUnits: 2
-        WriteCapacityUnits: 2     
-        
+        WriteCapacityUnits: 2
+
   # Function to simulate ride times and closures
   UpdateRides:
     Type: AWS::Serverless::Function
@@ -34,15 +34,15 @@ Resources:
       Environment:
         Variables:
           DDBtable: !Ref DDBtable
-          TopicArn: !Ref FATcontroller      
+          TopicArn: !Ref FATcontroller
       Policies:
         - DynamoDBCrudPolicy:
-            TableName: !Ref DDBtable  
+            TableName: !Ref DDBtable
         - Statement:
           - Effect: Allow
             Resource: !Ref FATcontroller
             Action:
-              - sns:Publish                 
+              - sns:Publish
       Events:
         UpdateRidesEvent:
           Type: Schedule
@@ -63,7 +63,7 @@ Resources:
           DDBtable: !Ref DDBtable
       Policies:
         - DynamoDBCrudPolicy:
-            TableName: !Ref DDBtable                 
+            TableName: !Ref DDBtable
 
   # Triggers Lambda function after stack creation to add rides to DDB
   DeploymentCustomResource:

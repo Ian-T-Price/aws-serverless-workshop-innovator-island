@@ -7,7 +7,7 @@
 
 const AWS = require('aws-sdk')
 const docClient = new AWS.DynamoDB.DocumentClient()
- 
+
 exports.lambdaHandler = async (event, context) => {
   try {
     const params = {
@@ -20,7 +20,7 @@ exports.lambdaHandler = async (event, context) => {
       "isBase64Encoded": false,
       "headers": {
         "Access-Control-Allow-Origin": "*"
-      },      
+      },
       'body': JSON.stringify({
           result
       })
