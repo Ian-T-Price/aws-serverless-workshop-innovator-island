@@ -11,7 +11,7 @@ cd ~/environment/theme-park-backend/1-app-deploy/ride-controller/
 sam package --output-template-file packaged.yaml --s3-bucket $s3_deploy_bucket
 sam deploy --template-file packaged.yaml --stack-name theme-park-ride-times --capabilities CAPABILITY_IAM
 
-##Deploy remaining SAM backend 
+##Deploy remaining SAM backend
 cd ~/environment/theme-park-backend/1-app-deploy/sam-app/
 sam build
 sam package --output-template-file packaged.yaml --s3-bucket $s3_deploy_bucket

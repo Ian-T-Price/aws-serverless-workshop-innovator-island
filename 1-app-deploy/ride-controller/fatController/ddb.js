@@ -21,7 +21,7 @@ const getRides = async () => {
 
 // Updates ride in the table
 const updateRide = async (ride) => {
-  
+
   ride.lastUpdated = Date.now()
 
   await documentClient.put({

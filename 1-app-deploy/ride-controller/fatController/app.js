@@ -35,7 +35,7 @@ exports.handler = async (event) => {
 }
 
 /* Simple algorithm to change ride times every minute and
-   randomly close rides.
+  randomly close rides.
 */
 
 const updateRideState = (ride => {

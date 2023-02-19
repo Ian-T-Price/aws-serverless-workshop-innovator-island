@@ -8,10 +8,10 @@ const iotdata = new AWS.IotData({ endpoint: process.env.IOT_DATA_ENDPOINT })
 
 /* MODULE 2 - Real-time ride wait times
 
-   This function listens to an SNS topic published by the Flow & Traffic Controller
-   which provides ride waiting times throughout the park. The handler stores the 
-   latest message in DynamoDB and publishes the message to the IoT topic, which
-   will then publish to the front end. */
+  This function listens to an SNS topic published by the Flow & Traffic Controller
+  which provides ride waiting times throughout the park. The handler stores the
+  latest message in DynamoDB and publishes the message to the IoT topic, which
+  will then publish to the front end. */
 
 // Commits the latest message to DynamoDB
 const saveToDDB = async function (message) {

@@ -19,7 +19,7 @@ exports.handler = async (event) => {
 
 const getUploadURL = async function() {
   const actionId = uuidv4()
-  
+
   const s3Params = {
     Bucket: process.env.UploadBucket,
     Key:  `${actionId}.jpg`,
